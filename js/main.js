@@ -339,7 +339,7 @@ jQuery(document).ready(function($) {
 	    });
 	  });
 	  
-	  $container.isotope({ filter: '*' });
+	//   $container.isotope({ filter: '*' });
 
 	    // filter items on button click
 	  $('#filters').on( 'click', 'button', function() {
@@ -352,13 +352,18 @@ jQuery(document).ready(function($) {
 
   siteIstotope();
 
+  function abrirGaleria(indice) {
+	var visibleLinks = $('.fancybox:visible');
+	$.fancybox.open( visibleLinks, {}, visibleLinks.index( indice ));
+	$('.fancybox-button--thumbs').click();
+	return false;
 
+  }
   $('.fancybox').on('click', function() {
-	  var visibleLinks = $('.fancybox');
-
-	  $.fancybox.open( visibleLinks, {}, visibleLinks.index( this ) );
-
-	  return false;
+	  return abrirGaleria(this);
+	});
+$('#btnVerMaisGaleria').on('click', function() {
+	abrirGaleria(0);
 	});
 
 	if ($.fn.owlCarousel) {
