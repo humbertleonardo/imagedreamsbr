@@ -131,10 +131,11 @@ body:after {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
 .title_section {
-  height: 370px !important;
+  height: 300px !important;
   min-height: 0 !important;
   background-image: url('../images/bg-section.jpg');
   background-position: center top;
+  background-attachment: fixed;
 }
 .title_section::before {
   background: rgba(0, 0, 0, 0.6) !important;
@@ -143,10 +144,13 @@ body:after {
   color: white !important;
 }
 .site-section {
-  padding: 2.5em 0; }
+  padding: 3rem 0 2rem;
+}
   @media (min-width: 768px) {
     .site-section {
-      padding: 5em 0; } }
+      padding: 3rem 0 2rem; 
+    }
+  }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -602,7 +606,7 @@ body:after {
     -webkit-box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
     box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1); }
     .sticky-wrapper.is-sticky .site-navbar .site-menu-toggle {
-      color: #ed6d60; }
+      color: #fff; }
     .sticky-wrapper.is-sticky .site-navbar .site-logo a {
       color: #ed6d60; }
     .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a {
@@ -620,6 +624,8 @@ body:after {
   /* background: rgba(41, 57, 58, 0.7);  background:linear-gradient(0deg, rgba(41, 57, 58, 0.7), rgba(41, 57, 58, 0.7)), url('../images/young-women-bar-singing-karaoke.webp'); */
   background-size: cover;
   background-position: center center;
+  margin-top: 0;
+  background: transparent;
 }
 #home-section video {
   position: absolute;
@@ -628,6 +634,10 @@ body:after {
   object-fit: fill;
   z-index: -1;
   pointer-events: none;
+  position: fixed;
+}
+section {
+  background: #fff;
 }
 .site-blocks-cover {
   background-size: cover;
@@ -647,8 +657,8 @@ body:after {
       bottom: 0;
       right: 0;
       top: 0;
-      background: rgba(41, 41, 41, 0.7);
-    }
+      background: rgba(10, 10, 10, 0.6);
+  }
   .site-blocks-cover .player {
     position: absolute;
     bottom: -250px;
@@ -689,7 +699,6 @@ body:after {
 #btn_insta_home {
   border: 2px solid #ed6d60;
   color: #ed6d60;
-  font-weight: bold;
   height: 48px;
   padding-left: 30px;
   background-color: rgba(0, 0, 0, 0.25);
@@ -1309,7 +1318,14 @@ body:after {
   text-align: center; }
   .testimonial blockquote {
     font-size: 1.5rem;
-    font-style: italic; }
+    font-style: italic;
+    width: 95%;
+  }
+  @media (max-width: 992px) {
+    .testimonial blockquote {
+      font-size: 1.2rem;
+    }
+  }  
   .testimonial figure img {
     max-width: 100px;
     margin: 0 auto;
@@ -1689,6 +1705,8 @@ body:after {
   text-align: center;
   padding-top: 0.25rem!important;
   padding-bottom: 0.5rem!important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
   background: rgba(28, 28, 28, 1);
   color: white;
   display: inline-block;
@@ -2023,6 +2041,38 @@ body:after {
     margin-top: 20px;
     opacity: 0; } }
 
+    @-webkit-keyframes bounceInUp {
+      0% {
+         opacity: 0;
+         -webkit-transform: translateY(2000px);
+      }
+      100% {
+          opacity: 1;
+         -webkit-transform: translateY(0);
+      }
+   }
+   
+   @keyframes bounceInUp {
+      0% {
+         opacity: 0;
+         transform: translateY(2000px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+   }
+   
+   .bounceInUp {
+      -webkit-animation-name: bounceInUp;
+      animation-name: bounceInUp;
+
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+   }
+
 /* Blog */
 .sidebar-box {
   margin-bottom: 30px;
@@ -2154,6 +2204,8 @@ figure figcaption {
 
 /* :: 10.0 Follow CSS */
 .single-instagram-item {
+  width: 150px;
+  float: left;
   position: relative;
   z-index: 1;
   overflow: hidden;

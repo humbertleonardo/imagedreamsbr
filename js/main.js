@@ -1,16 +1,17 @@
  AOS.init({
  	duration: 800,
- 	easing: 'slide',
+	easing: 'ease-in-out-sine',
+	anchorPlacement: 'top-bottom',
  	once: false
  });
 
 jQuery(document).ready(function($) {
-
+	AOS.refresh;
 	"use strict";
 
 	
-	$(".loader").delay(1000).fadeOut("slow");
-  $("#overlayer").delay(1000).fadeOut("slow");	
+	$(".loader").delay(250).fadeOut("slow");
+  $("#overlayer").delay(250).fadeOut("slow");	
   
 
 	var siteMenuClone = function() {
@@ -363,9 +364,10 @@ jQuery(document).ready(function($) {
 	if ($.fn.owlCarousel) {
         var instagramFeedSlider = $('.instragram-feed-area');
         instagramFeedSlider.owlCarousel({
-            items: 6,
+            items: 10,
             loop: true,
             autoplay: true,
+			autoWidth:true,
             smartSpeed: 1000,
             autoplayTimeout: 3000,
             responsive: {
@@ -382,7 +384,7 @@ jQuery(document).ready(function($) {
                     items: 5
                 },
                 1200: {
-                    items: 6
+                    items: 8
                 }
             }
         })
